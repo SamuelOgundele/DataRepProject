@@ -24,15 +24,23 @@ router.post('/', async (req, res) => {
     }
 });
 
-// Update a task
+// Update a task by ID
 router.put('/:id', async (req, res) => {
     try {
-        const updatedTask = await Task.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const updatedTask = await Task.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true } // Return the updated document
+        );
+        if (!updatedTask) {
+            return res.status(404).json({ message: 'Task not found' });
+        }
         res.status(200).json(updatedTask);
     } catch (err) {
-        res.status(500).json(err);
+        res.status(500).json({ error: 'Error updating the task' });
     }
 });
+
 
 // Delete a task
 router.delete('/:id', async (req, res) => {
@@ -41,6 +49,19 @@ router.delete('/:id', async (req, res) => {
         res.status(200).json("Task deleted");
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+// Get a single task by ID
+router.get('/:id', async (req, res) => {
+    try {
+        const task = await Task.findById(req.params.id);
+        if (!task) {
+            return res.status(404).json({ message: 'Task not found' });
+        }
+        res.status(200).json(task);
+    } catch (err) {
+        res.status(500).json({ error: 'Error fetching the task' });
     }
 });
 

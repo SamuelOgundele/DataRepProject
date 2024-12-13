@@ -36,8 +36,6 @@ cd mern-todo-app
 2. Set Up the Backend
 Navigate to the backend folder and install dependencies:
 
-bash
-Copy code
 cd backend
 npm install
 Install Backend Dependencies:
@@ -50,8 +48,6 @@ npm install body-parser	Parses incoming request bodies.
 3. Set Up the Frontend
 Navigate to the frontend folder and install dependencies:
 
-bash
-Copy code
 cd ../frontend
 npm install
 Install Frontend Dependencies:
@@ -63,20 +59,17 @@ npm install bootstrap	Adds responsive and styled components.
 Create a free MongoDB cluster on MongoDB Atlas.
 Add your MongoDB URI to the backend/.env file:
 env
-Copy code
+
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/todolist?retryWrites=true&w=majority
 5. Run the Application
 Start the backend and frontend servers:
 
 Run the Backend:
-bash
-Copy code
 cd backend
 npm run dev
 Runs the backend server on http://localhost:4000.
 Run the Frontend:
-bash
-Copy code
+
 cd ../frontend
 npm start
 Runs the frontend on http://localhost:3000.
@@ -97,8 +90,6 @@ Use the filter dropdown to filter tasks by priority (Low, Medium, High).
 Project Structure
 The application is organized as follows:
 
-bash
-Copy code
 mern-todo-app/
 │
 ├── backend/
@@ -133,11 +124,6 @@ Technologies Used
 Frontend: React, React Router, Axios, Bootstrap
 Backend: Node.js, Express.js, MongoDB, Mongoose
 Styling: Bootstrap, Custom CSS
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-yaml
-Copy code
 
 ---
 

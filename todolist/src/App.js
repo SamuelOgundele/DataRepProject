@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AddTask from './pages/AddTask';
 import EditTask from './pages/EditTask';
+import Footer from './components/Footer';
 
 const App = () => {
     return (
@@ -14,6 +15,7 @@ const App = () => {
                 <Route path="/add" element={<AddTask />} />
                 <Route path="/edit/:id" element={<EditTask />} />
             </Routes>
+            <Footer /> {/* © 2024 Task Manager. All rights reserved. */}
         </Router>
     );
 };

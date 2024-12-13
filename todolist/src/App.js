@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import AddTask from './pages/AddTask';
 import EditTask from './pages/EditTask';
-import Navbar from './components/Navbar';
 
 const App = () => {
     return (
@@ -19,6 +19,7 @@ const App = () => {
 };
 
 export default App;
+
 
 
 

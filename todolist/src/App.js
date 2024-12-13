@@ -3,10 +3,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AddTask from './pages/AddTask';
 import EditTask from './pages/EditTask';
+import Navbar from './components/Navbar';
 
 const App = () => {
     return (
         <Router>
+            <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/add" element={<AddTask />} />
@@ -17,5 +19,6 @@ const App = () => {
 };
 
 export default App;
+
 
 

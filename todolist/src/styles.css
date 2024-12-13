@@ -1,0 +1,40 @@
+/* Task Card Colors */
+.card-high {
+    border-left: 4px solid #ff0000;
+    background-color: #b64848;
+}
+
+.card-medium {
+    border-left: 4px solid orange;
+    background-color: #eb8d2a;
+}
+
+.card-low {
+    border-left: 4px solid green;
+    background-color: #3fb33f;
+}
+
+/* Custom Page Header */
+.page-header {
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+/* Form Styling */
+.form-container {
+    background-color: #3674b3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background: linear-gradient(to bottom, #f0f8ff, #e6f7ff); /* Gradient from light blue to soft blue */
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}

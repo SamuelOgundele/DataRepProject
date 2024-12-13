@@ -6,8 +6,9 @@ const TaskForm = () => {
     const [task, setTask] = useState({ title: '', description: '', dueDate: '', priority: 'Low' });
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
-    const { id } = useParams();
+    const { id } = useParams(); // Get task ID from the URL
 
+    // Fetch task details if editing
     useEffect(() => {
         if (id) {
             setIsEditing(true);
@@ -17,21 +18,24 @@ const TaskForm = () => {
         }
     }, [id]);
 
+    // Handle form input changes
     const handleChange = (e) => {
         const { name, value } = e.target;
         setTask({ ...task, [name]: value });
     };
 
+    // Handle form submission for adding or updating tasks
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/tasks', task)
+        const url = isEditing ? `http://localhost:4000/tasks/${id}` : 'http://localhost:4000/tasks';
+        const method = isEditing ? 'put' : 'post';
+        axios[method](url, task)
             .then(() => {
-                alert('Task added successfully!');
+                alert(isEditing ? 'Task updated successfully!' : 'Task added successfully!');
                 navigate('/');
             })
-            .catch((error) => console.error('Error adding task:', error));
+            .catch(error => console.error('Error submitting task:', error));
     };
-    
 
     return (
         <div className="container mt-4">
@@ -97,4 +101,5 @@ const TaskForm = () => {
 };
 
 export default TaskForm;
+
 
